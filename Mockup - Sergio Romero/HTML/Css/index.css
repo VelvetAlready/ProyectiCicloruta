@@ -1,0 +1,120 @@
+/* codigo general */
+
+
+
+body {
+    margin: 0;
+    padding: 0%;
+   background-image: url('../Img/1012289_OIUFXG0.jpg');
+}
+
+
+.name {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    background: #1f7c51f7;
+}
+.name .content{
+    width: 90%;
+    height: auto;
+    position: absolute;
+    left: 2%;
+   
+}
+.name  .p1{
+    color: #030303;
+    font-family: "Baloo Tama 2", sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-right: 40px;
+    text-align: center;
+}
+.info1 {
+    width: 90%;
+    height: auto;
+    background: #1f7c51ed;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+}
+.info1 img{
+    width: 500px;
+    height: auto;
+}
+
+
+/* contenedor derecho */
+.info1 .Contenido-Derecho{
+    background-color: #eedfdfb7;
+    padding: 3rem 2rem;
+    margin: 20% 20% 20% 10%;
+}
+.info1 .Buscador{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.info1 .Buscador input[type="text"]{
+    width: 500px;
+    padding: 5px;
+}
+.info1 .Opciones-Buscador{
+    margin-top: 10px;
+}
+.info2 {
+    width: 90%;
+    height: auto;
+    background: #1f7c51ed;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+}
+.info2 img{
+    width: 500px;
+    height: auto;
+}
+.info2 .Contenido-Derecho{
+   
+    flex-direction: column;
+}
+.info3 {
+    width: 90%;
+    height: auto;
+    background: #1f7c51ed;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.info2 .Informes{
+    background-color: #eedfdfb7;
+ 
+    padding: 7rem 8rem;
+    margin: 10% 20% 10% 20%;
+
+}
+.info3 h4{
+    font-size: 22px;
+   text-align: center;
+}
+
+.info3 .in{
+width: 97%;
+height: 40%;
+    background-color: #eedfdfb7;
+    word-spacing: 20px;
+    font-size: 20px;
+    text-align: center;
+    padding: 1rem 1rem;
+   
+}

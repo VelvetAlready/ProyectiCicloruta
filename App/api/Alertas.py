@@ -4,8 +4,8 @@ from models.Alertas import Alertas, AlertasSchema
 
 ruta_alertas = Blueprint("ruta_alertas", __name__)
 
+alertas_schema = AlertasSchema()
 alerta_schema = AlertasSchema()
-alertas_schema = AlertasSchema(many=True)
 
 @ruta_alertas.route("/alertas", methods=["GET"])
 def get_alertas():
@@ -13,37 +13,35 @@ def get_alertas():
     result = alertas_schema.dump(alertas)
     return jsonify(result)
 
-@ruta_alertas.route("/alertas", methods=["POST"])
-def create_alerta():
-    nombre = request.json.get('nombre')
-    if nombre:
-        new_alerta = Alertas(nombre=nombre)
-        db.session.add(new_alerta)
-        db.session.commit()
-        return jsonify({"message": "Alerta creada con éxito"})
-    else:
-        return jsonify({"error": "Falta el campo 'nombre' en la solicitud"}), 400
+@ruta_alertas.route("/savealerta", methods=["POST"])
+def save_alerta():
+    data = request.json
+    nuevo_alerta = Alertas(**data)
+    db.session.add(nuevo_alerta)
+    db.session.commit()
+    return alerta_schema.jsonify(nuevo_alerta)
 
-@ruta_alertas.route("/alertas/<int:id>", methods=["PUT"])
+@ruta_alertas.route("/updatealerta/<id>", methods=["PUT"])
 def update_alerta(id):
-    nombre = request.json.get('nombre')
     alerta = Alertas.query.get(id)
-    if alerta:
-        if nombre:
-            alerta.nombre = nombre
-            db.session.commit()
-            return jsonify({"message": "Alerta actualizada con éxito"})
-        else:
-            return jsonify({"error": "Falta el campo 'nombre' en la solicitud"}), 400
-    else:
-        return jsonify({"error": "Alerta no encontrada"}), 404
+    if not alerta:
+        return jsonify({"message": "Alerta no encontrada"}), 404
 
-@ruta_alertas.route("/alertas/<int:id>", methods=["DELETE"])
+    data = request.json
+    alerta.Tipo_alerta = data.get('Tipo_alerta', alerta.Tipo_alerta)
+    alerta.Descripcion_alerta = data.get('Descripcion_alerta', alerta.Descripcion_alerta)
+    alerta.Latitud_alerta = data.get('Latitud_alerta', alerta.Latitud_alerta)
+    alerta.Longitud_alerta = data.get('Longitud_alerta', alerta.Longitud_alerta)
+
+    db.session.commit()
+    return alerta_schema.jsonify(alerta)
+
+@ruta_alertas.route("/deletealerta/<id>", methods=["DELETE"])
 def delete_alerta(id):
     alerta = Alertas.query.get(id)
-    if alerta:
-        db.session.delete(alerta)
-        db.session.commit()
-        return jsonify({"message": "Alerta eliminada con éxito"})
-    else:
-        return jsonify({"error": "Alerta no encontrada"}), 404
+    if not alerta:
+        return jsonify({"message": "Alerta no encontrada"}), 404
+
+    db.session.delete(alerta)
+    db.session.commit()
+    return alerta_schema.jsonify(alerta)

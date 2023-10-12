@@ -13,37 +13,32 @@ def get_clientes():
     result = clientes_schema.dump(clientes)
     return jsonify(result)
 
-@ruta_cliente.route("/clientes", methods=["POST"])
-def create_cliente():
-    nombre = request.json.get('nombre')
-    if nombre:
-        new_cliente = Clientes(nombre=nombre)
-        db.session.add(new_cliente)
-        db.session.commit()
-        return jsonify({"message": "Cliente creado con éxito"})
-    else:
-        return jsonify({"error": "Falta el campo 'nombre' en la solicitud"}), 400
+@ruta_cliente.route("/savecliente", methods=["POST"])
+def save_cliente():
+    data = request.json
+    nuevo_cliente = Clientes(**data)
+    db.session.add(nuevo_cliente)
+    db.session.commit()
+    return cliente_schema.jsonify(nuevo_cliente)
 
-@ruta_cliente.route("/clientes/<int:id>", methods=["PUT"])
+@ruta_cliente.route("/updatecliente/<id>", methods=["PUT"])
 def update_cliente(id):
-    nombre = request.json.get('nombre')
     cliente = Clientes.query.get(id)
-    if cliente:
-        if nombre:
-            cliente.nombre = nombre
-            db.session.commit()
-            return jsonify({"message": "Cliente actualizado con éxito"})
-        else:
-            return jsonify({"error": "Falta el campo 'nombre' en la solicitud"}), 400
-    else:
-        return jsonify({"error": "Cliente no encontrado"}), 404
+    if not cliente:
+        return jsonify({"message": "Cliente no encontrado"}), 404
 
-@ruta_cliente.route("/clientes/<int:id>", methods=["DELETE"])
+    data = request.json
+    cliente.nombre = data.get('nombre', cliente.nombre)
+
+    db.session.commit()
+    return cliente_schema.jsonify(cliente)
+
+@ruta_cliente.route("/deletecliente/<id>", methods=["DELETE"])
 def delete_cliente(id):
     cliente = Clientes.query.get(id)
-    if cliente:
-        db.session.delete(cliente)
-        db.session.commit()
-        return jsonify({"message": "Cliente eliminado con éxito"})
-    else:
-        return jsonify({"error": "Cliente no encontrado"}), 404
+    if not cliente:
+        return jsonify({"message": "Cliente no encontrado"}), 404
+
+    db.session.delete(cliente)
+    db.session.commit()
+    return cliente_schema.jsonify(cliente)

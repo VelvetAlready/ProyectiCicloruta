@@ -1,0 +1,130 @@
+.body {
+    margin: 0;
+    padding: 0%;
+    background: #000000;
+}
+
+.name {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    background: #9554ff;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos en el contenedor */
+    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+    flex-direction: column; /* Alinea los elementos en una columna */
+}
+
+.name .content {
+    width: 100%;
+    text-align: center;
+    font-family: "Baloo Tama 2", sans-serif;
+    font-weight: bold;
+    font-size: 24px; /* Tamaño del texto para los enlaces */
+    color: #fff0ff;
+    margin-top: 10px; /* Espacio entre el título "Inicio" y los enlaces */
+}
+
+.name .content .p1 {
+    color: #fff0ff;
+    font-family: "Baloo Tama 2", sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-right: 40px;
+}
+
+.info1 {
+    width: 90%;
+    height: auto;
+    background: #9554ff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Cambio para colocar la barra de búsqueda debajo de la imagen */
+    align-items: center; /* Centrar el contenido verticalmente */
+}
+
+.info1 img {
+    width: 500px;
+    height: auto;
+    margin-top: 20px; /* Espacio entre el título y la imagen */
+    display: block; /* Hacer que la imagen sea un bloque para que se coloque debajo del título */
+    max-width: 100%; /* Asegurarse de que la imagen no sea más ancha que su contenedor */
+}
+
+.info1 .Contenido-Derecho {
+    display: flex;
+    flex-direction: column;
+}
+
+.info1 .Buscador {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info1 .Buscador input[type="text"] {
+    width: 500px;
+    padding: 5px;
+}
+
+.info1 .Opciones-Buscador {
+    margin-top: 10px;
+}
+
+/* Agregado para el subtítulo de la barra de búsqueda */
+.info1 .Contenido-Buscador h3 {
+    color: #fff0ff;
+    font-family: "Baloo Tama 2", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el chat simulado */
+.info1 .chat {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.info1 .chat .conversacion {
+    flex-grow: 1; /* Para que cada conversación ocupe el mismo espacio */
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.info1 .chat .titulo {
+    background-color: #9554ff;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px; /* Aumenta el tamaño del título */
+    text-align: center; /* Centra el texto */
+}
+
+.info1 .chat .mensaje {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.info1 .chat input[type="text"] {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Agregamos margen entre las conversaciones */
+.info1 .chat .conversacion + .conversacion {
+    margin-left: 20px;
+}

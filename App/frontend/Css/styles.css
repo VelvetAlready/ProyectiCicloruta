@@ -1,130 +1,399 @@
-.body {
+* {
+
     margin: 0;
-    padding: 0%;
-    background: #000000;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+
 }
 
-.name {
-    width: 100%;
-    height: 300px;
-    border-radius: 20px;
-    background: #9554ff;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente los elementos en el contenedor */
-    align-items: center; /* Centra verticalmente los elementos en el contenedor */
-    flex-direction: column; /* Alinea los elementos en una columna */
+body {
+    background-image: url('../Img/1012289_OIUFXG0.jpg');
 }
 
-.name .content {
-    width: 100%;
-    text-align: center;
-    font-family: "Baloo Tama 2", sans-serif;
-    font-weight: bold;
-    font-size: 24px; /* Tamaño del texto para los enlaces */
-    color: #fff0ff;
-    margin-top: 10px; /* Espacio entre el título "Inicio" y los enlaces */
-}
-
-.name .content .p1 {
-    color: #fff0ff;
-    font-family: "Baloo Tama 2", sans-serif;
-    font-weight: bolder;
-    font-size: 50px;
-    margin-right: 40px;
-}
-
-.info1 {
-    width: 90%;
-    height: auto;
-    background: #9554ff;
-    margin: 5% auto;
-    padding: 20px;
-    border-radius: 20px;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column; /* Cambio para colocar la barra de búsqueda debajo de la imagen */
-    align-items: center; /* Centrar el contenido verticalmente */
-}
-
-.info1 img {
-    width: 500px;
-    height: auto;
-    margin-top: 20px; /* Espacio entre el título y la imagen */
-    display: block; /* Hacer que la imagen sea un bloque para que se coloque debajo del título */
-    max-width: 100%; /* Asegurarse de que la imagen no sea más ancha que su contenedor */
-}
-
-.info1 .Contenido-Derecho {
-    display: flex;
-    flex-direction: column;
-}
-
-.info1 .Buscador {
+header {
+    background-image: none;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
-.info1 .Buscador input[type="text"] {
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menu {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;      
+}
+
+.menu .logo {
+    font-weight: 700;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #ffffff;
+    display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color: #0eaef3;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content {
+    display: flex;
+}
+
+.content {
+    padding: 150px 150px 0px 0px;
+}
+
+.content h1 {
+    color: #ffffff;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+.content p {
+    margin-top: 25px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.btn-1 {
+    display: inline-block;
+    background-color: rgba(170, 177, 255, 0.3);
+    border: 1px solid #aab1ff;
+    margin: 35px 10px 0px 0px;
+    padding: 15px 25px;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.btn-1:hover {
+    background-color: #aab1ff;
+}
+
+.services {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.service {
+    padding: 25px;
+    margin: 0px 10px;
+    box-shadow: 0px 0px 20px rgba(135, 141, 214, 0,3);
+}
+
+.service img {
     width: 500px;
-    padding: 5px;
 }
 
-.info1 .Opciones-Buscador {
-    margin-top: 10px;
-}
-
-/* Agregado para el subtítulo de la barra de búsqueda */
-.info1 .Contenido-Buscador h3 {
-    color: #fff0ff;
-    font-family: "Baloo Tama 2", sans-serif;
-    font-weight: bold;
-    font-size: 24px;
+.service h3 {
+    font-size: 20px;
+    color: #0e0e0e;
     margin-bottom: 10px;
 }
 
-/* Estilos para el chat simulado */
-.info1 .chat {
+.service p {
+    color: black;
+    font-size: 16px;
+}
+
+.porfolios {
+    padding: 80px 0px;
+    text-align: center;
+    color: #0e0e0e;
+}
+
+.porfolios h2 {
+    font-size: 55px;
+}
+
+.porfolio {
     display: flex;
-    align-items: flex-start;
-    margin-top: 20px;
+    align-items: center;
 }
 
-.info1 .chat .conversacion {
-    flex-grow: 1; /* Para que cada conversación ocupe el mismo espacio */
+.porfolio img {
+    width: 350px;
+}
+
+.porfolio-1 {
+    text-align: left;
+    margin-left: 100px;
+}
+
+.porfolio-1 h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.porfolio-1 p {
+    font-size: 18px;
+    color: #525254;
+    margin-bottom: 25px;
+}
+
+.porfolio-2 {
+    text-align: left;
+    margin-right: 100px;
+}
+
+.porfolio-2 h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.porfolio-2 p {
+    font-size: 18px;
+    color: #525254;
+    margin-bottom: 25px;
+}
+
+.btn-2 {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 25px;
+    background-color: #7042b5;
+    color: #ffffff;
+}
+
+.btn-2:hover {
+    background-color: #8650d7;
+}
+
+.footer {
+    padding: 200px 0px 30px 0px;
+    background-image: url();
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info-content {
     display: flex;
-    flex-direction: column;
-    margin-right: 10px;
 }
 
-.info1 .chat .titulo {
-    background-color: #9554ff;
-    padding: 10px;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px; /* Aumenta el tamaño del título */
-    text-align: center; /* Centra el texto */
+.info-price {
+    padding: 35px;
+    text-align: center;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0,3);
+    margin: 0px 150px 0px 0px;
+    color: #0e0e0e;
 }
 
-.info1 .chat .mensaje {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
+.info-price h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 
-.info1 .chat input[type="text"] {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    border: none;
-    width: 100%; /* Ocupa todo el ancho disponible */
+.price {
+    font-size: 14px;
+    color: #0eaef3 |important;
+    margin-bottom: 10px;
 }
 
-/* Agregamos margen entre las conversaciones */
-.info1 .chat .conversacion + .conversacion {
-    margin-left: 20px;
+.info-price p {
+    font-size: 16px;
+    color: #525254;
+}
+
+.info-txt {
+    margin-left: 35px;
+    color: #ffffff;
+}
+
+hr {
+    margin: 45px 0px;
+    border: 0.5px solid #aab1ff;
+}
+
+.enlaces {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.enlaces h3 {
+    font-size: 25px;
+}
+
+.enlace {
+    display: flex;
+}
+
+.enlace li a {
+    display: block;
+    margin: 20px;
+    color: #ffffff;
+}
+
+.enlace li a:hover {
+    color: #0eaef3;
+}
+
+@media (max-width:991px) {
+    
+    .menu {
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #5B50BC;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    header {
+        height: 0vh;
+        padding:  400px 0px;
+        background-position: center center;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 0px 30px;
+    }
+
+    .content {
+        padding: 0px;
+    }
+
+    .content h1 {
+        margin-top: 100px;
+        font-size: 45px;
+    }
+
+    .content p {
+        margin-top: 0px;
+    }
+
+    .header-content img {
+        width: 150px;
+    }
+
+    .services {
+        flex-direction: column;
+        padding: 50px 30px 0px 30px;
+    }
+
+    .service {
+        margin-bottom: 50px;
+    }
+
+    .porfolios {
+        padding: 0px 30px 30px 30px;
+    }
+
+    .porfolios h2 {
+        margin-bottom: 15px;
+    }
+
+    .porfolio {
+        flex-direction: column;
+    }
+
+    .porfolio img {
+        display: none;
+    }
+
+    .porfolio-1 {
+        text-align: center;
+        margin: 0px 0px 25px 0px;
+    }
+
+    .porfolio-2 {
+        text-align: center;
+        margin: 0px 0px 25px 0px;
+    }
+
+    footer {
+        padding: 0px 30px 30px 30px;
+    }
+
+    .info-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-price {
+        margin: 0px 0px 20px 0px;
+    }
+
+    .info-txt {
+        margin: 0px;
+    }
+
+    hr {
+        margin: 25px 0px;
+    }
+
+    .enlaces {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .enlace {
+        flex-direction: column;
+    }
+
 }
